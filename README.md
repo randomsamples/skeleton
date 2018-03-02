@@ -5,19 +5,14 @@ This project aims to simplify creating a project from scratch, ready to use in y
 It's arguably simpler than typesafe activator or g8 because it doesn't require any additional tools, just clone, build and run.
 It provides a simple way to have a project running with the following tools configured:
 
-     Scala 2.11.7
-     SBT 0.13.9
-     ScalaTest 2.2.4
-     ScalaCheck 1.12.5
-     IntelliJ IDEA 
-     Scala-IDE 3.0+
-     Jenkins (test Reporting and code coverage)
-     ScalaStyle
+     Scala 2.12.4
+     SBT 1.1.0
+     ScalaTest 3.0.4
 
 Requires
 ---------------
 * Please download latest version of SBT.
-* [sbt 0.13.9](http://www.scala-sbt.org)
+* [sbt 1.1.0](http://www.scala-sbt.org)
 
 Use
 ---------------
@@ -32,16 +27,8 @@ Clone and update the project name from build.sbt
 
 IDE
 ---------------
-* Intellij IDEA (13 | 14). Intellij has great support for Scala, and works fast on this setup.
-	> gen-idea
-
-	* [Intellij IDEA 14](http://www.jetbrains.com/idea/download/). Community edition with Scala plugin is enough.
-
-* Scala IDE: Uses Eclipse. Lagging behind Intellij in features, but offers the familiar feel of Eclipse development. 	
-	> eclipse
-	
-	* Read [sbt eclipse](https://github.com/typesafehub/sbteclipse/wiki/Using-sbteclipse) for more details.
-	* [Scala IDE 3](http://scala-ide.org). Install at least the ScalaTest plugin, Play plugin if you are building a web app using it.
+* Intellij IDEA 2017. Intellij has great support for Scala (has been improving since 2013), and works well with this setup.
+	* [Intellij IDEA 2017.2](http://www.jetbrains.com/idea/download/)
 
 Test
 ------------------
@@ -55,40 +42,19 @@ Test a single TestSuite
 
 	> test-only package.subpackage.Class
 
-Test and Jenkins
--------------------
-
-ScalaTest is been configured to produce test reports in the JUnit XML format that Jenkins can understand in target/junit-xml-reports.
-Configure Jenkins to use this folder. For many more options to configure, use the [ScalaTest runner documentation](http://www.scalatest.org/user_guide/using_the_runner)
-
-Integration Test
--------------------
-Abbreviated as it. A bit fiddly, since it will require every setting defined for test to also be defined for it.
-
-	> it:test
-
 Useful commands
 -----------------
 The former will run a scala REPL with all the project dependencies available. The later will autoscan and run a Main class.
 	> console
 	> run
 
-Code Coverage
-------------------
-Uses Scoverage as a code coverage tool. The main advantage over other coverage tools is that it understands expressions, as opposed to lines.
+Multi Project Version:
+-----------------------
 
-	> test
-	> coverageReport
+Multiple modules and package and deployment.
 
-See [Scoverage Plugin](https://github.com/scoverage/sbt-scoverage)
+[fractal/multi-project-skeleton](https://github.com/fractal/multi-project-skeleton)
 
-Read documentation details, specially if using integration tests.
-
-Style Checker
--------------------
-Uses [ScalaStyle](http://www.scalastyle.org)
-
-	> scalastyle
 
 SBT Launch useful configuration options
 ---------------------------------------
@@ -129,3 +95,5 @@ Fernando Racca
 [@quant_leap](http://twitter.com/quant_leap)
 
 [fractal/skeleton](http://github.com/fractal/skeleton)
+
+
